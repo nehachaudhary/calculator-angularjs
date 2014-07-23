@@ -7,25 +7,22 @@
 <div ng-controller="CalculatorController">
     <span>{{message}}</span>
     <div class="theme-calculator">
-
-        <div class="display-band" ng-controller="DisplayController">
-            <input type="text" readonly class="js-display-band theme-display-band" value="{{displayValue}}">
-        </div>
-
-        <div class="button-panel" ng-controller="ButtonController">
-            <input type="button" ng-repeat="number in buttonData.numbers track by $index" value="{{number}}" ng-click="numberOperatorClicked($event)" class="theme-button js-input-key">
-            <input type="button" ng-repeat="operator in buttonData.operators track by $index" value="{{operator}}" ng-click="numberOperatorClicked($event)" class="theme-button js-input-key">
-            <input type="button" ng-repeat="special in buttonData.specials track by $index" value="{{special}}" ng-click="specialClicked($event)" class="theme-button js-{{special}}-key">
-        </div>
+        <div ng-controller="DisplayController" display-panel></div>
+        <div ng-controller="ButtonController" button-panel></div>
     </div>
 
 </div>
 <script type="application/javascript" src="./../js/libs/angular.js"></script>
 <script type="application/javascript" src="./../js/app.js"></script>
 <script type="application/javascript" src="./../js/helper.js"></script>
+
 <script type="application/javascript" src="./../js/calculator/calculatorcontroller.js"></script>
 <script type="application/javascript" src="./../js/buttondata.js"></script>
+
 <script type="application/javascript" src="./../js/display/displaycontroller.js"></script>
+<script type="application/javascript" src="./../js/display/displaydirective.js"></script>
+
 <script type="application/javascript" src="./../js/button/buttoncontroller.js"></script>
+<script type="application/javascript" src="./../js/button/buttondirective.js"></script>
 </body>
 </html>

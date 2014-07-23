@@ -1,4 +1,4 @@
-app.controller('CalculatorController', function($scope, calculatorSharedService){
+app.controller('CalculatorController', function($scope, calculatorSharedService, evaluateService){
     $scope.message = 'AngularJS Calculator';
 
     $scope.$on('calculator.calculate',function (number) {
@@ -15,7 +15,7 @@ app.controller('CalculatorController', function($scope, calculatorSharedService)
                     if(operatorIndex !== -1){
                         var num1 = parseFloat(expression[operatorIndex-1], 10);
                         var num2 = parseFloat(expression[operatorIndex+1], 10);
-                        var ans = evaluateExpression(num1, expression[operatorIndex], num2);
+                        var ans = evaluateService.evaluate(num1, expression[operatorIndex], num2);
                         var isSingleOccurrence = operatorIndex === expression.lastIndexOf(operator);
                         expression.splice(operatorIndex - 1, 3, ans);
                         if (isSingleOccurrence) {
