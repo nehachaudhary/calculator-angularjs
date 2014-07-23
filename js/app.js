@@ -23,7 +23,7 @@ app.factory('calculatorSharedService', function ($rootScope) {
                     }else {
                         var v = previousValue[previousValue.length - 2];
                         if(v !== undefined){
-                            if(isFinite(v)){
+                            if(isFinite(v) || v === '.'){
                                 this.value += " " + currentValue + " ";
                             }
                         }else{

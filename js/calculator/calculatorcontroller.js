@@ -33,5 +33,6 @@ app.controller('CalculatorController', function($scope, calculatorSharedService,
         }
         calculatorSharedService.value = evaluatedValue;
         calculatorSharedService.setValue();
+        calculatorSharedService.value = 0;
     });
 });
