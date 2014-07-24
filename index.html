@@ -5,25 +5,17 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body ng-app="Calculator">    <!--ng-app is directive-->
-<div ng-controller="CalculatorController">
+<div calculator class="theme-calculator">
     <span>{{message}}</span>
-    <div class="theme-calculator">
-        <div ng-controller="DisplayController" display-panel></div>
-        <div ng-controller="ButtonController" button-panel></div>
-    </div>
-
 </div>
+
 <script type="application/javascript" src="js/libs/angular.js"></script>
 <script type="application/javascript" src="js/app.js"></script>
 <script type="application/javascript" src="js/helper.js"></script>
 
-<script type="application/javascript" src="js/calculator/calculatorcontroller.js"></script>
+<script type="application/javascript" src="js/calculator/calculatordirective.js"></script>
 <script type="application/javascript" src="js/buttondata.js"></script>
-
-<script type="application/javascript" src="js/display/displaycontroller.js"></script>
 <script type="application/javascript" src="js/display/displaydirective.js"></script>
-
-<script type="application/javascript" src="js/button/buttoncontroller.js"></script>
 <script type="application/javascript" src="js/button/buttondirective.js"></script>
 </body>
 </html>
