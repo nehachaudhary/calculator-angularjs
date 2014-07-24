@@ -1,3 +1,1 @@
-<input type="button" ng-repeat="number in buttonData.numbers track by $index" value="{{number}}" ng-click="numberOperatorClicked($event)" class="theme-button js-input-key">
-<input type="button" ng-repeat="operator in buttonData.operators track by $index" value="{{operator}}" ng-click="numberOperatorClicked($event)" class="theme-button js-input-key">
-<input type="button" ng-repeat="special in buttonData.specials track by $index" value="{{special}}" ng-click="specialClicked($event)" class="theme-button js-{{special}}-key">
+<input type="button" ng-repeat="data in clickedButtonData track by $index" value="{{data.displayValue}}" ng-click="buttonClicked(data)" class="theme-button js-input-key">

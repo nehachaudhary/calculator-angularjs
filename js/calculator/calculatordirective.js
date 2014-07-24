@@ -3,7 +3,23 @@ app.directive('calculator',function(){
         restrict : 'A',
         require : ['displayPanel','buttonPanel'],
         template : "<div display-panel></div><div button-panel></div>",
-        controller : function ($scope, calculatorSharedService, evaluateService) {
+        controller : function ($scope,CalculatorFactory, calculatorSharedService, evaluateService) {
+            $scope.calculatorData = CalculatorFactory;
+
+            $scope.$watch('calculatorData.clickedButtonData', function (data) {
+                if(typeof data.type !== 'undefined'){
+                    if(data.type === 'number' || data.type === 'operator'){
+                        calculatorSharedService.createDataToEvaluate(data.actualValue);
+                    } else if(data.actualValue === 'back'){
+                        calculatorSharedService.editValue();
+                    } else if(data.actualValue === 'ans'){
+                        calculatorSharedService.calculate();
+                    } else if(data.actualValue === 'clear'){
+                        calculatorSharedService.resetDisplay();
+                    }
+                }
+            });
+
             $scope.$on('calculator.calculate',function (number) {
                 var dataToEvaluate = calculatorSharedService.value;
                 var evaluatedValue = 0;
@@ -31,7 +47,6 @@ app.directive('calculator',function(){
                             }
                         }
                     }
-                    calculatorSharedService.resetDisplay();
                     evaluatedValue = isFinite(expression[0]) ? parseFloat(expression[0]) : 'Error !';
                 }
                 calculatorSharedService.value = evaluatedValue;
