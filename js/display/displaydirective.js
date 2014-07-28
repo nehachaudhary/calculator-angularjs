@@ -1,14 +1,13 @@
-app.directive('displayPanel', function () {
-    return {
-        restrict : 'A',
-        templateUrl : 'displayPanel.html',
-        controller : function ($scope) {
-            $scope.displayValue = 0;
+(function () {
+    'use strict';
 
-            $scope.$on('display.setValue', function (scope, value) {
-                $scope.displayValue = value;
-            });
-        }
-    };
+    function displayDirective() {
+        return {
+            restrict: 'A',
+            templateUrl: 'displayPanel.html',
+            controller: 'displayController'
+        };
+    }
 
-});
+    angular.module('Calculator').directive('displayPanel', displayDirective);
+})()

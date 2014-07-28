@@ -1,1 +1,4 @@
-var app = angular.module('Calculator',[]);
+(function () {
+    'use strict';
+    angular.module('Calculator',[]);
+})();
