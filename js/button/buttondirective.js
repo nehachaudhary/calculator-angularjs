@@ -1,13 +1,13 @@
-app.directive('buttonPanel', function () {
-    return {
-        restrict : 'A',
-        templateUrl : 'buttonPanelTemplate.html',
-        controller : function ($scope, buttonData) {
-            $scope.clickedButtonData = buttonData;
+(function () {
+    'us strict';
 
-            $scope.buttonClicked = function (data) {
-                $scope.calculatorData.clickedButtonData = data;
-            };
-        }
-     };
-});
+    function buttonDirective() {
+        return {
+            restrict: 'A',
+            templateUrl: 'buttonPanelTemplate.html',
+            controller: 'buttonController'
+        };
+    }
+
+    angular.module('Calculator').directive('buttonPanel', buttonDirective);
+})();

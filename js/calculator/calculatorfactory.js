@@ -1,5 +1,9 @@
-app.factory('CalculatorFactory', function () {
-    return {
-        clickedButtonData : {}
-    }
-});
+(function () {
+    'use strict';
+
+    angular.module('Calculator').factory('CalculatorFactory', function () {
+        return {
+            clickedButtonData: {}
+        }
+    });
+})();
