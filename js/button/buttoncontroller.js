@@ -8,5 +8,5 @@
         };
     }
 
-    angular.module('Calculator').controller('buttonController', buttonController);
+    angular.module('Calculator').controller('buttonController', ['$scope', 'buttonData', buttonController]);
 })();

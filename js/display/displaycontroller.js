@@ -8,5 +8,5 @@
         });
     }
 
-    angular.module('Calculator').controller('displayController',displayController);
+    angular.module('Calculator').controller('displayController',['$scope', displayController]);
 })();
