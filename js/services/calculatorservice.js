@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('Calculator').service('calculatorService', function ($rootScope) {
+    angular.module('Calculator').service('calculatorService', ['$rootScope',function ($rootScope) {
 
         var sharedService = {};
         sharedService.value = 0;
@@ -63,5 +63,5 @@
         };
 
         return sharedService;
-    });
+    }]);
 })();

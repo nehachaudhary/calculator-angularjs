@@ -27,5 +27,11 @@
 
     }
 
-    var module = angular.module('Calculator').controller('calculatorController', calculatorController);
+    var module = angular.module('Calculator').controller('calculatorController',
+                                                          ['$scope',
+                                                           'CalculatorFactory',
+                                                           'calculatorService',
+                                                           'evaluateService',
+                                                           calculatorController]);
+
 })();
