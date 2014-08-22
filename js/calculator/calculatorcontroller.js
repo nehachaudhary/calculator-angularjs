@@ -4,8 +4,8 @@
     function calculatorController($scope, CalculatorFactory, calculatorService, evaluateService) {
         $scope.calculatorData = CalculatorFactory;
 
-        $scope.$watch('calculatorData.clickedButtonData', function (data) {
-            if (typeof data.type !== 'undefined') {
+        $scope.$watch('buttonClickedData', function (data) {
+            if (typeof data !== 'undefined' && typeof data.type !== 'undefined') {
                 if (data.type === 'number' || data.type === 'operator') {
                     calculatorService.createDataToEvaluate(data.actualValue);
                 } else if (data.actualValue === 'back') {
